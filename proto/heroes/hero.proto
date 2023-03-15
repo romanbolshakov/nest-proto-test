@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package hero.v1;
+
+import "heroes/messages/get.proto";
+
+service Hero {
+  rpc getHero(GetHeroRequest) returns (GetHeroResponse) {}
+}
+
+message GetHeroRequest {
+  int32 id = 1;
+}
+
+message GetHeroResponse {
+  repeated HeroData hero = 1;
+}
